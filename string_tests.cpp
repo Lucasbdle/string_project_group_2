@@ -2,9 +2,11 @@
 #include "string.h"
 
 int main(){
-    String* s = new String();
+    String* s1 = new String();
 
-    std::cout << s->str << std::endl;
+    String* s2 = new String(*s1);
+
+    //std::cout << s << std::endl;
 
 
 

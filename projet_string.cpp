@@ -90,6 +90,7 @@ class self_String {
         }
         longueur_max = longueur_1 + length(data) ; 
         data = new_data ; 
+        
     }
     void reserve (size_t longueur){
         char* new_data = new char[length(data) + longueur] ; 

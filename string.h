@@ -6,25 +6,40 @@
 
 class String{
     public:
-    //default constructor
-    String();
-    //copy constructor
-    String(const String&);
-    
-    // constructor from a c-string
+        // default constructor
+        String();
+        // copy constructor
+        String(const String& other);
+        // constructor from a c-string
+        String(char* strcopy);
+        // destructor
+        ~String();
 
-    size_t length();
-    size_t max_size();
-    void resize (size_t n, char c);
-    String& operator= (const String& str);
-    String& operator_plus (const String& str, char c);
+        // Student A
+        const char* c_str() const;
+        size_t size() const;
+        void clear();
+        String& operator= (char c);
+        String operator_plus (const String& lhs, const char* rhs);
 
-    //private:
-     char* str;
+        // Student B
+        size_t length() const;
+        size_t max_size() const;
+        void resize (size_t n, char c);
+        String& operator= (const String& str);
+        String& operator_plus (const String& str, char c);
 
+        // Student C
+        size_t capacity() const;
+        bool empty() const;
+        void reserve (size_t n = 0);
+        String& operator= (const char* s);
+        String operator_plus (const String& lhs, const String& rhs);
 
-
-
+    private:
+        char* str = nullptr;
+    public:
+        char* getStr();
 
 };
 #endif  //STRING_H_
