@@ -27,7 +27,7 @@ class String{
         size_t max_size() const;
         void resize (size_t n, char c);
         String& operator= (const String& str);
-        String& operator_plus (const String& str, char c);
+        String operator_plus (const String& str, char c);
 
         // Student C
         size_t capacity() const;
@@ -37,9 +37,7 @@ class String{
         String operator_plus (const String& lhs, const String& rhs);
 
     private:
-        char* str = nullptr;
-    public:
-        char* getStr();
+        char* c_str_ = nullptr;
 
 };
 #endif  //STRING_H_
