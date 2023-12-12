@@ -20,24 +20,25 @@ class String{
         size_t size() const;
         void clear();
         String& operator= (char c);
-        String operator_plus (const String& lhs, const char* rhs);
+        String operator+ (const char* rhs);
 
         // Student B
         size_t length() const;
         size_t max_size() const;
-        void resize (size_t n, char c);
+        void resize (size_t n, char c = '\0');
         String& operator= (const String& str);
-        String operator_plus (const String& str, char c);
+        String operator+ (char c);
 
         // Student C
         size_t capacity() const;
         bool empty() const;
         void reserve (size_t n = 0);
         String& operator= (const char* s);
-        String operator_plus (const String& lhs, const String& rhs);
+        String operator+ (const String& rhs);
 
     private:
         char* c_str_ = nullptr;
+        size_t capacity_ = 0;
 
 };
 #endif  //STRING_H_
